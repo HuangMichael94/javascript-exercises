@@ -1,19 +1,14 @@
 const palindromes = function (string) {
-  // Since we only consider letters and numbers, create a variable containing all valid characters
-  const alphanumerical = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  str = string.toLowerCase();
+  str = str.trim();
+  str = str.replace(" ", "");
+  str = str.replace(/[^0-9a-z]/gi, '');
 
-  // Convert to lowercase, split to array of individual characters, filter only valid characters, then rejoin as new string
-  const cleanedString = string
-    .toLowerCase()
-    .split('')
-    .filter((character) => alphanumerical.includes(character))
-    .join('');
+  reverse = str.split("");
+  reverse = reverse.reverse();
+  reverse = reverse.join("");
 
-  // Create a new reversed string for comparison
-  const reversedString = cleanedString.split('').reverse().join('');
-
-  // Return the outcome of the comparison which will either be true or false
-  return cleanedString === reversedString;
+  return str === reverse;
 };
 
 // Do not edit below this line
