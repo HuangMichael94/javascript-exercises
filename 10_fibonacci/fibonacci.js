@@ -1,13 +1,19 @@
 const fibonacci = function(n) {
-    if ((n == 0) || (n === 1)) {
-        return 1;
-    }
+    let num = parseInt(n);
 
-    arr = [1, 1]
-    for (let i = 2; i < n; i++) {
-        arr.push(arr[i-1] + arr[i-2]);
+    if (num < 0) {return 'OOPS'}
+    if (num === 0) {return 0;}
+    if (num === 1) {return 1;}
+
+    let a=1;
+    let b=1;
+    let c=1;
+    for(let i=2; i<num; i++){
+        c=a+b;
+        a=b;
+        b=c;
     }
-    return arr[arr.length-1]
+    return c;
 };
 
 // Do not edit below this line
