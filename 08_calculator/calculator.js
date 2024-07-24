@@ -7,35 +7,24 @@ const subtract = function(num1,num2) {
 };
 
 const sum = function(args) {
-  returnTotal = 0;
-  args.forEach(element => {
-    returnTotal += element;
-  });
-  return returnTotal;
+  return args.reduce((total, num) => total + num, 0);
 };
 
 const multiply = function(args) {
-  returnTotal = 1;
-  for (let i = 0; i < args.length; i++) {
-    returnTotal *= args[i];
-  }
-  return returnTotal;
+  return args.reduce((total, num) => total * num, 1)
 };
 
 const power = function(num1, num2) {
-  returnTotal = 1;
-  for (let i = 0; i < num2; i++) {
-    returnTotal *= num1;
-  }
-  return returnTotal;
+  return Math.pow(num1, num2);
 };
 
 const factorial = function(num) {
-  returnTotal = 1;
-	for (let i = num; i > 0; i--) {
-    returnTotal *= i;
+  // create array of 1-num, then use reduce() to multiple all values of the array
+  let nums = []
+  for (let i = 1; i <= num; i++) {
+    nums.push(i)
   }
-  return returnTotal;
+  return nums.reduce((total, currValue) => total * currValue, 1);
 };
 
 // Do not edit below this line
