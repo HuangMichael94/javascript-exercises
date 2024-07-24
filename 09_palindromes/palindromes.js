@@ -1,14 +1,13 @@
 const palindromes = function (string) {
-  str = string.toLowerCase();
-  str = str.trim();
-  str = str.replace(" ", "");
-  str = str.replace(/[^0-9a-z]/gi, '');
+  const valid = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
-  reverse = str.split("");
-  reverse = reverse.reverse();
-  reverse = reverse.join("");
+  const str = string
+  .toLowerCase()
+  .split('')
+  .filter((char) => valid.includes(char))
+  .join('');
 
-  return str === reverse;
+  return str === str.split('').reverse().join('');
 };
 
 // Do not edit below this line
